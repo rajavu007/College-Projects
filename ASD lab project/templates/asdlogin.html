@@ -1,0 +1,53 @@
+{% extends 'asdbasics.html' %}
+{% block content %}
+<ul class="nav justify-content-end">
+    <li class="nav-item">
+      <a class="nav-link active" href="{{url_for('admin')}}">ADMIN'S LOGIN HERE</a>
+    </li>
+  </ul>
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ asdform.hidden_tag()}}
+            <fieldset class="form-group">
+                <legend class="boarder-bottom nb-4">Login</legend>
+                <div class="form-group">
+                    {{asdform.email.label(class='form-control-label')}}
+                    {% if asdform.email.errors %}
+                        {{asdform.email(class='form-control form-control-lg is-invalid')}}
+                        <div class='invalid-feedback'>
+                            {% for error in asdform.email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{asdform.email(class='form-control form-control-lg')}}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{asdform.password.label(class='form-control-label')}}
+                    {% if asdform.password.errors %}
+                        {{asdform.password(class='form-control form-control-lg is-invalid')}}
+                        <div class='invalid-feedback'>
+                            {% for error in asdform.password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{asdform.password(class='form-control form-control-lg')}}
+                    {% endif %}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{asdform.sign(class="btn btn-outline-info")}}
+            </div>
+            <small class="text-mutated ml-2">
+                <a href="#">Forgot Password</a>
+            </small>
+        </form>
+    </div>
+    <div class="boarder-top pt-3">
+        <small class="text-muted">
+            Create an account?<a class="ml-2" href="{{url_for('register')}}">Sign UP</a>
+        </small>
+    </div>
+{% endblock %}

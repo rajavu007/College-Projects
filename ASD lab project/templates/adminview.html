@@ -1,0 +1,62 @@
+{% extends 'asdbasics.html'%}
+{% block content %}
+<ul class="nav justify-content-end">
+    <li class="nav-item">
+      <a class="nav-link active" href="{{url_for('admin')}}">Logout</a>
+    </li>
+</ul>
+<form method="POST" action="">
+    <style>
+        h1{text-align: center;}
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+    <h1>Students Details</h1>
+    
+    <table style="width:100%">
+        <tr>
+          <th>Regno</th>
+          <th>Name</th> 
+          <th>Parent/Guardian Name</th>
+          <th>Age</th>
+          <th>DOB</th> 
+          <th>Department</th>
+          <th>Present Semester</th>
+          <th>Avereage GPA</th> 
+          <th>Phone</th>
+          <th>Address</th>
+          <th>City</th> 
+          <th>State</th>
+          <th>PIN</th>
+        </tr>
+        {% for forms in forms %}
+            <tr>
+            <td>{{forms[3]}}</td>
+            <td>{{forms[4]}}</td>
+            <td>{{forms[5]}}</td>
+            <td>{{forms[6]}}</td>
+            <td>{{forms[7]}}</td>
+            <td>{{forms[8]}}</td>
+            <td>{{forms[9]}}</td>
+            <td>{{forms[10]}}</td>
+            <td>{{forms[11]}}</td>
+            <td>{{forms[12]}}</td>
+            <td>{{forms[13]}}</td>
+            <td>{{forms[14]}}</td>
+            <td>{{forms[15]}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <br><br>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputRegno">Enter Registration Number To Delete Details</label>
+          <input type="text" class="form-control" name='stdregno' id="inputRegno" placeholder="Registration Number">
+        </div>
+    </div>
+    <div class="form-group">
+        <input class="btn btn-outline-info" id="sign" name="sign" type="submit" value="Delete">
+    </div>
+</form>
+{% endblock %}
