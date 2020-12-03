@@ -1,0 +1,51 @@
+{% extends 'desgbasic.html' %}
+{% block content %}
+    <nav class="navbar navbar-expand-lg navbar-red bg-dark " >
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#" >Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+            </li>
+        </ul>
+    </div>
+    </nav>
+    <style>
+        h2{
+            text-align: center;
+            color: rgb(0, 128, 17);
+        }
+        p{
+            text-align: center ;
+            color: rgb(0, 128, 17);
+        }
+        img{margin: 30px 30px 30px 30px;}
+    </style>
+    <h2><b><i>Welcome Reader's</i></b></h2>
+    <p><b><i>Do Belive Something Very Magical Can Happen When You Read A Very Good Book</b></i><sub><b> (J K Rowling)</b></sub></p>
+    <tr>
+    <td colspan="2"><h2><b>BOOKS</b></h2><hr></td>
+    </tr>
+    <tr>
+    <th><a href="{{url_for('adventure')}}"><img src="{{url_for('static',filename='images/adven1.jpg')}}" class="rounded float-left" width="40%" ></a></th>
+    <th><img src="{{url_for('static',filename='images/horror.jpg')}}" class="rounded float-right" width="40%" ></a></th>
+    <th><img src="{{url_for('static',filename='images/romance.jpg')}}" class="rounded float-left" width="40%" ></a></th>
+    <th><img src="{{url_for('static',filename='images/mystery.png')}}" class="rounded float-right" width="40%" ></a></th>
+    </tr>
+    
+{% endblock %}
+
+
+<!--Fantasy.
+Adventure.
+Romance.
+Contemporary-->

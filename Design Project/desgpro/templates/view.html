@@ -1,0 +1,69 @@
+{% extends 'desgbasic.html'%}
+{% block content %}
+<style>
+  p{
+    text-align: center;
+    color: rgb(9, 164, 236);
+    }
+  legend{
+    color: rgb(9, 164, 236);
+  }
+  div.form-row{
+    color: rgb(194, 8, 23);
+  }
+</style>
+<form method="POST" action="">
+    <legend class="boarder-bottom nb-4">Your Details</legend>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputId">USERID</label>
+        <input type="text" class="form-control"  id="inputId" placeholder="4" readonly>
+      </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputName">Name</label>
+          <input type="text"  class="form-control" id="inputName" placeholder="Raj" readonly>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPhone">Phone</label>
+          <input type="tel"  class="form-control" id="inputParentName" placeholder="9653728888"  minlength="10" maxlength="10" readonly>
+        </div>
+    </div>
+    <style>
+      h1{
+        text-align: center;
+        color: red;
+      }
+      table, th, td {
+          border: 1px solid black;
+          color: white;
+      }
+  </style>
+    <h1>BOOKS YOU HAVE</h1>
+    
+    <table style="width:100%">
+        <tr>
+          <th>NAME</th>
+          <th>AUTHOR</th> 
+          <th>RETURN DATE</th>
+          <th>FINE</th>
+        </tr>
+        <tr>
+          <td>Harry Potter and the Philosopher's Stone</td>
+          <td>J K Rowling</td>
+          <td>25/11/2020</td>
+          <td>Nil (<a href="{{url_for('view')}}">RETURN</a>)</td>
+        </tr>
+        <tr>
+          <td>1984 </td>
+          <td>George Orwell</td>
+          <td>10/11/2020</td>
+          <td>Yes(15)  (<a href="{{url_for('view')}}">RETURN</a>)</td>
+        </tr>
+      </table>
+      <div class="form-group">
+        <input class="btn btn-outline-info" id="sign" type="submit" value="LOGOUT">
+      </div>
+</form>
+{% endblock %}

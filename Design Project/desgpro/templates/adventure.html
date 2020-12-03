@@ -1,0 +1,76 @@
+{% extends 'desgbasic.html' %}
+{% block content %}
+
+<form method="POST" action="">
+    <style>
+        h1{
+          text-align: center;
+          color: red;
+        }
+        table, th, td {
+            border: 1px solid black;
+            color: white;
+        }
+    </style>
+    <h1>ADVENTURE BOOKS</h1>
+    
+    <table style="width:100%">
+        <tr>
+          <th>NAME</th>
+          <th>AUTHOR</th> 
+          <th>AVAILABLE</th>
+        </tr>
+        <tr>
+          <td>The Three Musketeers</td>
+          <td>Alexandre Dumas</td>
+          <td>YES  (<a href="{{url_for('login')}}">PICK</a>)</td>
+        </tr>
+        <tr>
+          <td>Treasure Island </td>
+          <td>Robert Louis Stevenson</td>
+          <td>YES  (<a href="{{url_for('login')}}">PICK</a>)</td>
+        </tr>
+        <tr>
+          <td>King Solomon's Mines </td>
+          <td>H. Rider Haggard and A. C. Michael</td>
+          <td>YES  (<a href="{{url_for('login')}}">PICK</a>)</td>
+        </tr>
+        <tr>
+            <td>Journey to the Center of the Earth </th>
+            <td>Jules Verne</th> 
+            <td>NO  (<a href="{{url_for('login')}}">REQUEST</a>)</th>
+          </tr>
+          <tr>
+            <td>The Count of Monte Cristo </td>
+            <td>Alexandre Dumas</td>
+            <td>YES  (<a href="{{url_for('login')}}">PICK</a>)</td>
+          </tr>
+          <tr>
+            <td>Ivanhoe </td>
+            <td>Walter Scott</td>
+            <td>Y  (<a href="{{url_for('login')}}">PICK</a>)</td>
+          </tr>
+          <tr>
+            <td>Tarzan of the Apes </td>
+            <td>Edgar Rice Burroughs</td>
+            <td>NO  (<a href="{{url_for('login')}}">REQUEST</a>)</td>
+          </tr>
+          <tr>
+            <td>Heart of Darkness </td>
+            <td>Joseph Conrad</td>
+            <td>NO  (<a href="{{url_for('login')}}">REQUEST</a>)</td>
+          </tr>
+          <tr>
+              <td>Hatchet </th>
+              <td>Gary Paulsen</th> 
+              <td>YES  (<a href="{{url_for('login')}}">PICK</a>)</th>
+            </tr>
+            <tr>
+              <td>Don Quixote </td>
+              <td>Miguel de Cervantes</td>
+              <td>YES  (<a href="{{url_for('login')}}">PICK</a>)</td>
+            </tr>
+      </table>
+</form>
+
+{% endblock %}

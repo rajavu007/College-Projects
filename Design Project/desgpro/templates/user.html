@@ -1,0 +1,65 @@
+{% extends 'desgbasic.html' %}
+{% block content %}
+
+<form method="POST" action="">
+    <button type="submit" class="btn btn-primary ">Books</button>
+    <style>
+        h1{
+          text-align: center;
+          color: rgb(10, 127, 223);}
+        table, th, td {
+            border: 1px solid black;
+            color: white;
+        }
+    </style>
+    <h1>Members</h1>
+    
+    <table style="width:100%">
+        <tr>
+          <th>Name</th>
+          <th>UserID</th> 
+          <th>Phone</th>
+        </tr>
+        <tr>
+          <td>Asvin</td>
+          <td>1</td>
+          <td>9844534343</td>
+        </tr>
+        <tr>
+          <td>Arjun</td>
+          <td>2</td>
+          <td>9712345688</td>
+        </tr>
+        <tr>
+          <td>Arunraj</td>
+          <td>3</td>
+          <td>9831245673</td>
+        </tr>
+        <tr>
+            <td>Raj</th>
+            <td>4</th> 
+            <td>9653728888</th>
+          </tr>
+          <tr>
+            <td>Vic</td>
+            <td>5</td>
+            <td>9023456710</td>
+          </tr>
+          <tr>
+            <td>Athul</td>
+            <td>6</td>
+            <td>9213425230</td>
+          </tr>
+      </table>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputRegno">Enter Users Number To Delete Details</label>
+          <input type="text" class="form-control" name='stdregno' id="inputRegno" placeholder="UserId">
+        </div>
+      </div>
+      <div class="form-group">
+         <input class="btn btn-outline-info" id="sign" name="sign" type="submit" value="Delete">
+      </div>
+</form>
+
+{% endblock %}

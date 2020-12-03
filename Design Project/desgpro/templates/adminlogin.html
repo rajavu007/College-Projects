@@ -1,0 +1,51 @@
+{% extends 'desgbasic.html '%}
+{% block content %}
+<style>
+    legend{
+        color: rgb(230, 11, 11);
+    }
+    div.form-group{
+        color: rgb(241, 6, 6);
+    }
+</style>
+<div class="content-section">
+    <form method="POST" action="">
+        {{ asdform.hidden_tag()}}
+        <fieldset class="form-group">
+            <legend class="boarder-bottom nb-4">Admin's Login</legend>
+            <div class="form-group">
+                {{asdform.userid.label(class='form-control-label')}}
+                {% if asdform.userid.errors %}
+                    {{asdform.userid(class='form-control form-control-lg is-invalid')}}
+                    <div class='invalid-feedback'>
+                        {% for error in asdform.userid.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{asdform.userid(class='form-control form-control-lg')}}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{asdform.password.label(class='form-control-label')}}
+                {% if asdform.password.errors %}
+                    {{asdform.password(class='form-control form-control-lg is-invalid')}}
+                    <div class='invalid-feedback'>
+                        {% for error in asdform.password.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{asdform.password(class='form-control form-control-lg')}}
+                {% endif %}
+            </div>
+        </fieldset>
+        <div class="form-group">
+            {{asdform.sign(class="btn btn-outline-info")}}
+        </div>
+        <small class="text-mutated ml-2">
+            <a href="#">Forgot Password</a>
+        </small>
+    </form>
+</div>
+{% endblock %}
